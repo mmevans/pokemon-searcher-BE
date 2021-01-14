@@ -24,7 +24,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.options("*", cors());
 
 app.get("/pokemon", async function (req, res) {
   console.log("dsadas", req);
