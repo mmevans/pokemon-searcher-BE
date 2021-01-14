@@ -12,6 +12,7 @@ class PokemonIndex extends React.Component {
 
   componentDidMount() {
     fetch("http://localhost:8080/pokemon", {
+      mode: "cors",
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET",
@@ -19,7 +20,7 @@ class PokemonIndex extends React.Component {
     })
       .then((res) => res.json())
       .then((pokemonCollection) =>
-        this.setState({ pokemonCollection: pokemonCollection })
+        this.setState({ pokemonCollection: pokemonCollection.pokemon })
       )
       .catch((e) => console.error(e));
   }

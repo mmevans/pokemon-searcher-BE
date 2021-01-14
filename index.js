@@ -9,11 +9,6 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 8080;
 
-app.get("/pokemon", async function (req, res) {
-  console.log(allPokemon);
-  res.send(allPokemon);
-});
-
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "client/build")));
@@ -23,23 +18,17 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const whitelist = [
-  "http://localhost:3001",
-  "http://localhost:8080",
-  "https://react-node-express-pokemon.herokuapp.com",
-];
 const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin);
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable");
-      callback(null, true);
-    } else {
-      console.log("Origin rejected");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "https://react-node-express-pokemon.herokuapp.com",
+  optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
+app.options("*", cors());
+
+app.get("/pokemon", async function (req, res) {
+  console.log("dsadas", req);
+  res.send(allPokemon);
+});
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
