@@ -13,9 +13,8 @@ class PokemonIndex extends React.Component {
   componentDidMount() {
     fetch("http://localhost:8080/pokemon", {
       headers: {
-        "Access-Control-Allow-Origin":
-          "https://react-node-express-pokemon.herokuapp.com/",
-        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET",
       },
     })
       .then((res) => res.json())
