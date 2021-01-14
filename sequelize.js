@@ -22,8 +22,6 @@ const sequelize = async () => {
   return sequelize;
 };
 
-sequelize();
-
 module.exports = {
   sequelize,
 };

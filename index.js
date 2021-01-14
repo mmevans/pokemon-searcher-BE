@@ -3,6 +3,7 @@ const app = express();
 const sequelize = require("./sequelize");
 const db = require("./models/index");
 require("dotenv").config();
+const cors = require("cors");
 
 const PORT = process.env.PORT || 8080;
 app.post("/add-pokemon", function (req, res) {
@@ -13,8 +14,6 @@ app.get("/all-pokemon", async function (req, res) {
   const pokemon = await db.pokemon.findAll();
   res.send(pokemon);
 });
-
-sequelize();
 
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
