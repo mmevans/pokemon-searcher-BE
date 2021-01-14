@@ -8,9 +8,6 @@ require("dotenv").config();
 const cors = require("cors");
 
 const PORT = process.env.PORT || 8080;
-app.post("/add-pokemon", function (req, res) {
-  //to-do
-});
 
 app.get("/pokemon", async function (req, res) {
   const pokemon = await db.pokemon.findAll();
