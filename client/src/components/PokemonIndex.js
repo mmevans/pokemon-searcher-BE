@@ -11,7 +11,7 @@ class PokemonIndex extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:8080/pokemon")
+    fetch("/pokemon")
       .then((res) => res.json())
       .then((pokemonCollection) =>
         this.setState({ pokemonCollection: pokemonCollection })
