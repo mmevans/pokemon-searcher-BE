@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const whitelist = [
-  "http://localhost:3000",
+  "http://localhost:3001",
   "http://localhost:8080",
   "https://react-node-express-pokemon.herokuapp.com",
 ];
