@@ -20,7 +20,7 @@ class PokemonIndex extends React.Component {
     })
       .then((res) => res.json())
       .then((pokemonCollection) => {
-        this.setState({ pokemonCollection: pokemon.pokemon });
+        this.setState({ pokemonCollection: pokemonCollection.pokemon });
       })
       .catch((e) => console.error(e));
   }
