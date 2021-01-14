@@ -26,10 +26,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/pokemon", async function (req, res) {
-  console.log("dsadas", req);
-  if (req) {
-    res.send(allPokemon);
-  }
+  res.send(allPokemon);
 });
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));

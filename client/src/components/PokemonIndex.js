@@ -49,7 +49,6 @@ class PokemonIndex extends React.Component {
   };
 
   render() {
-    console.log();
     const desiredPokemon = pokemon.pokemon.filter((p) =>
       p.name.includes(this.state.searchTerm)
     );
