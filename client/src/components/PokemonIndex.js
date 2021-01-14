@@ -3,7 +3,7 @@ import PokemonCollection from "./PokemonCollection";
 import PokemonForm from "./PokemonForm";
 import { Search } from "semantic-ui-react";
 import _ from "lodash";
-
+import pokemon from "../../db.json";
 class PokemonIndex extends React.Component {
   state = {
     pokemonCollection: [],
@@ -19,9 +19,8 @@ class PokemonIndex extends React.Component {
       },
     })
       .then((res) => res.json())
-      .then(({ pokemon }) => {
-        this.setState({ pokemonCollection: pokemon });
-        console.log(pokemon);
+      .then((pokemonCollection) => {
+        this.setState({ pokemonCollection: pokemon.pokemon });
       })
       .catch((e) => console.error(e));
   }
