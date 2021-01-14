@@ -10,8 +10,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 8080;
 
 app.get("/pokemon", async function (req, res) {
-  const pokemon = await db.pokemon.findAll();
-
+  console.log(allPokemon);
   res.send(allPokemon);
 });
 
