@@ -3,6 +3,7 @@ const app = express();
 const db = require("./models/index");
 const path = require("path");
 const bodyParser = require("body-parser");
+const allPokemon = require("./db.json");
 require("dotenv").config();
 const cors = require("cors");
 
@@ -11,9 +12,10 @@ app.post("/add-pokemon", function (req, res) {
   //to-do
 });
 
-app.get("/all-pokemon", async function (req, res) {
+app.get("/pokemon", async function (req, res) {
   const pokemon = await db.pokemon.findAll();
-  res.send(pokemon);
+
+  res.send(allPokemon);
 });
 
 if (process.env.NODE_ENV === "production") {
