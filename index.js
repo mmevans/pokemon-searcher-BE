@@ -46,4 +46,4 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.listen(PORT);
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
