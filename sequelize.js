@@ -1,4 +1,3 @@
-const { SequelizeMessage } = require("./constants/sequelize");
 const Sequelize = require("sequelize");
 
 require("dotenv").config();
